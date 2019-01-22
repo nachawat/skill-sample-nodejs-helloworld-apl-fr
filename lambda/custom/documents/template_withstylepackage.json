@@ -1,0 +1,39 @@
+{
+    "type": "APL",
+    "version": "1.0",
+    "import": [
+        {
+            "name": "alexa-styles",
+            "version" : "1.0.0"
+        }
+    ],
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "width": "100%",
+                "height": "100%",
+                "justifyContent" : "center",
+                "alignItems": "center",
+                "item": [
+                    {
+                        "type": "Image",
+                        "source": "${payload.templateData.image}",
+                        "width": "20vw",
+                        "height": "20vw",
+                        "scale": "best-fill"
+                    },
+                    {
+                        "type": "Text",
+                        "text": "${payload.templateData.text}",
+                        "style" : "textStyleDisplay4",
+                        "paddingTop" : "10vw"
+                    }
+                ]
+            }
+        ]
+    }
+}

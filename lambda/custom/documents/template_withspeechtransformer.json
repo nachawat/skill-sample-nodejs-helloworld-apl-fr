@@ -1,0 +1,66 @@
+{
+    "type": "APL",
+    "version": "1.0",
+    "theme": "dark",
+    "import": [
+        {
+            "name": "alexa-styles",
+            "version": "1.0.0"
+        },
+        {
+            "name": "alexa-layouts",
+            "version" : "1.0.0"
+        },
+        {
+            "name": "alexa-viewport-profiles",
+            "version" : "1.0.0"
+        }
+    ],
+    "resources": [
+        {
+            "colors": {
+                "headerBgColor": "blue"
+            }
+        },
+        {
+            "when": "${viewport.shape == 'round'}",
+            "colors": {
+                "headerBgColor": "yellow"
+            }
+        }
+    ],
+    "styles": {},
+    "layouts": {},
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "width": "100%",
+                "height": "100%",
+                "item": [
+                    {
+                        "type": "AlexaHeader",
+                        "headerAttributionImage": "${payload.templateData.properties.image}",
+                        "headerBackgroundColor": "@headerBgColor"
+                    },
+                    {
+                        "type": "Text",
+                        "id": "idVoiceDemoText",
+                        "text": "${payload.templateData.properties.text}",
+                        "speech": "${payload.templateData.properties.textSpeech}",
+                        "style" : "textStyleDisplay4",
+                        "paddingTop" : "100dp",
+                        "textAlign" : "center"
+                    },
+                    {
+                        "type": "AlexaFooter",
+                        "hintText": "${payload.templateData.properties.hintString}"
+                    }
+                ]
+            }
+        ]
+    }
+}

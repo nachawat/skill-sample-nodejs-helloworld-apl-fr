@@ -1,0 +1,226 @@
+{
+    "type": "APL",
+    "version": "1.0",
+    "theme": "dark",
+    "import": [],
+    "resources": [],
+    "styles": {
+        "itemBorderStyle": {
+            "description": "Style highlighting in white items when spoken",
+            "values": [
+                {
+                    "borderWidth": 4,
+                    "borderColor": "transparent"
+                },
+                {
+                    "when": "${state.focused}",
+                    "borderWidth": 4,
+                    "borderColor": "#FFFFFF"
+                },
+                {
+                    "when": "${state.karaoke}",
+                    "borderWidth": 4,
+                    "borderColor": "#FFFFFF"
+                }
+            ]
+        }
+    },
+    "layouts": {
+        "FullHorizontalListItem": {
+            "description": "Item for small screens, with a full screen image and text, spoken and highlighted",
+            "item": [
+                {
+                    "type": "Container",
+                    "id": "item${index}",
+                    "speech": "${data.speech}",
+                    "width": "100vw",
+                    "height": "100vh",
+                    "alignItems": "center",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "height": "70%",
+                            "width": "100%",
+                            "source": "${data.imageURL}",
+                            "scale": "best-fill"
+                        },
+                        {
+                            "type": "Frame",
+                            "position": "absolute",
+                            "bottom": "0",
+                            "height": "30vh",
+                            "width": "100vw",
+                            "backgroundColor": "rgba(0, 0, 0, 0.5)",
+                            "items": [
+                                {
+                                    "type": "Container",
+                                    "alignItems": "center",
+                                    "items": [
+                                        {
+                                            "type": "Text",
+                                            "text": "${data.primaryText}",
+                                            "maxLines": 1,
+                                            "fontSize": "30dp",
+                                            "textAlign": "center",
+                                            "width": "80vw",
+                                            "paddingTop": "50px"
+                                        },
+                                        {
+                                            "type": "Text",
+                                            "text": "${data.secondaryText}",
+                                            "fontSize": "20dp",
+                                            "textAlign": "center",
+                                            "width": "60vw"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "HorizontalListItem": {
+            "description": "Item for large screen layout, with an image and text, spoken and highlighted",
+            "item": [
+                {
+                    "type": "TouchWrapper",
+                    "id": "item${index}",
+                    "speech": "${data.speech}",
+                    "onPress": {
+                        "type": "SendEvent",
+                        "arguments": [
+                            "CategorySelected",
+                            "${index}"
+                        ]
+                    },
+                    "item": {
+                        "type": "Frame",
+                        "width": "32vw",
+                        "height": "100%",
+                        "paddingLeft": "1vw",
+                        "paddingRight": "1vw",
+                        "style": "itemBorderStyle",
+                        "inheritParentState": true,
+                        "items": [
+                            {
+                                "type": "Container",
+                                "direction": "column",
+                                "paddingTop": "1vw",
+                                "items": [
+                                    {
+                                        "type": "Image",
+                                        "source": "${data.imageURL}",
+                                        "width": "30vw",
+                                        "height": "30vw",
+                                        "scale": "best-fill"
+                                    },
+                                    {
+                                        "type": "Text",
+                                        "text": "${data.primaryText}",
+                                        "textAlign": "center",
+                                        "maxLines": 1,
+                                        "paddingTop": "10px",
+                                        "spacing": 12
+                                    },
+                                    {
+                                        "type": "Text",
+                                        "text": "${data.secondaryText}",
+                                        "textAlign": "center",
+                                        "spacing": 4
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "item": [
+            {
+                "when": "${viewport.shape == 'round'}",
+                "type": "Pager",
+                "id": "introComponent",
+                "speech": "${payload.data.properties.introSpeech}",
+                "height": "100vh",
+                "width": "100vw",
+                "data": "${payload.data.properties.itemList}",
+                "firstItem": {
+                    "type": "Container",
+                    "justifyContent": "center",
+                    "alignItems": "center",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "source": "${payload.data.properties.backgroundImage}",
+                            "scale": "best-fill",
+                            "position": "absolute",
+                            "width": "100vw",
+                            "height": "100vh"
+                        },
+                        {
+                            "type": "Text",
+                            "text": "${payload.data.properties.title}",
+                            "width": "80vw"
+                        }
+                    ]
+                },
+                "items": [
+                    {
+                        "type": "FullHorizontalListItem"
+                    }
+                ]
+            },
+            {
+                "when": "${viewport.shape != 'round'}",
+                "type": "Container",
+                "height": "100vh",
+                "width": "100vw",
+                "items": [
+                    {
+                        "id": "introComponent",
+                        "speech": "${payload.data.properties.introSpeech}",
+                        "type": "Image",
+                        "source": "${payload.data.properties.backgroundImage}",
+                        "overlayColor": "rgba(0, 0, 0, 0.7)",
+                        "scale": "best-fill",
+                        "width": "100%",
+                        "height": "100%",
+                        "position": "absolute"
+                    },
+                    {
+                        "type": "Text",
+                        "text": "${payload.data.properties.title}",
+                        "paddingTop": "30px",
+                        "paddingLeft": "30px",
+                        "paddingBottom": "30px"
+                    },
+                    {
+                        "type": "Container",
+                        "direction": "row",
+                        "paddingLeft": "20px",
+                        "paddingRight": "20px",
+                        "height": "70vh",
+                        "width": "100%",
+                        "data": "${payload.data.properties.itemList}",
+                        "item": [
+                            {
+                                "type": "HorizontalListItem"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Text",
+                        "text": "${payload.data.properties.hintText}",
+                        "paddingLeft": "30px"
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "type": "APL",
+    "version": "1.0",
+    "mainTemplate": {
+        "items": [
+            {
+                "type": "Container",
+                "width": "100%",
+                "height": "100%",
+                "justifyContent" : "center",
+                "alignItems": "center",
+                "item": [
+                    {
+                        "type": "Image",
+                        "source": "https://files.gamebanana.com/img/ico/sprays/chucknorrisapproved.png",
+                        "width": "20vw",
+                        "height": "20vw",
+                        "scale": "best-fill"
+                    },
+                    {
+                        "type": "Text",
+                        "text": "Dites-moi <i>bonjour</i> !",
+                        "color" : "#FF0000",
+                        "paddingTop" : "10vw"
+                    }
+                ]
+            }
+        ]
+    }
+}

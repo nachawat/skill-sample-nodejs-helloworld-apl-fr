@@ -1,0 +1,43 @@
+{
+    "data": {
+        "type": "object",
+        "properties": {
+            "backgroundImage": "https://steamcdn-a.akamaihd.net/steam/apps/27020/0000007627.1920x1080.jpg?t=1447351711",
+            "title": "Dans quelle catégorie voulez-vous jouer ?",
+            "introText": "<speak>Bonjour! Choisissez la catégorie dans laquelle vous voulez jouer: </speak>",
+            "hintText": "Essayez: Alexa, choisis une catégorie au hasard.",
+            "itemList": [
+                {
+                    "primaryText": "Célébrités",
+                    "ssml": "<speak>Célébrités,</speak>",
+                    "secondaryText": "",
+                    "imageURL": "https://i.pinimg.com/originals/e3/10/6d/e3106d1062ef7324449d187d54f88ddd.jpg"
+                },
+                {
+                    "primaryText": "Fiction",
+                    "ssml": "<speak>Fiction,</speak>",
+                    "secondaryText": "",
+                    "imageURL": "https://lumiere-a.akamaihd.net/v1/images/Darth-Vader_6bda9114.jpeg?region=0%2C23%2C1400%2C785"
+                },
+                {
+                    "primaryText": "Crime",
+                    "ssml": "<speak>ou crime?</speak>",
+                    "secondaryText": "",
+                    "imageURL": "https://cosmos-magazine.imgix.net/file/spina/photo/1975/250515_Microbiome_4.jpg?ixlib=rails-1.1.0&h=445&w=657"
+                }
+            ]
+        },
+        "transformers": [
+            {
+                "inputPath": "itemList[*].ssml",
+                "outputName": "speech",
+                "transformer": "ssmlToSpeech"
+            },
+            {
+                "inputPath": "introText",
+                "outputName": "introSpeech",
+                "transformer": "ssmlToSpeech"
+            }
+        ]
+    }
+}

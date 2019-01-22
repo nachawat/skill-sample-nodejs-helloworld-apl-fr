@@ -1,0 +1,25 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "fr-FR": {
+          "name": "Atelier-APL-FR"
+        }
+      }
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "sourceDir": "lambda/custom",
+          "uri": "ask-custom-atelier-apl-fr"
+        },
+        "interfaces": [
+          {
+            "type": "ALEXA_PRESENTATION_APL"
+          }
+        ]
+      }
+    },
+    "manifestVersion": "1.0"
+  }
+}

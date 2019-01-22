@@ -1,0 +1,45 @@
+{
+    "type": "APL",
+    "version": "1.0", 
+    "styles": {
+        "textStyle": {
+            "values": [
+                {
+                    "fontSize": "40",
+                    "fontWeight": "bold",
+                    "color": "yellow"
+                }
+            ]
+        }
+    }, 
+    "layouts": {},
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "width": "100%",
+                "height": "100%",
+                "justifyContent" : "center",
+                "alignItems": "center",
+                "item": [
+                    {
+                        "type": "Image",
+                        "source": "${payload.templateData.image}",
+                        "width": "20vw",
+                        "height": "20vw",
+                        "scale": "best-fill"
+                    },
+                    {
+                        "type": "Text",
+                        "text": "${payload.templateData.text}",
+                        "style" : "textStyle",
+                        "paddingTop" : "10vw"
+                    }
+                ]
+            }
+        ]
+    }
+}

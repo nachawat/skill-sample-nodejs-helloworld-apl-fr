@@ -1,0 +1,17 @@
+{
+    "templateData": {
+        "type": "object",
+        "properties": {
+            "title" : "Ma première Skill APL",
+            "text": "Dites-moi <i>bonjour</i> !",
+            "image": "https://files.gamebanana.com/img/ico/sprays/chucknorrisapproved.png",
+            "hintString" : "Salut"
+        },
+        "transformers": [
+            {
+              "inputPath": "hintString",
+              "transformer": "textToHint"
+            }
+        ]
+    }
+}

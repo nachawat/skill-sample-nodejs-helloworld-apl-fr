@@ -1,0 +1,68 @@
+{
+    "type": "APL",
+    "version": "1.0",
+    "import": [
+        {
+            "name": "alexa-styles",
+            "version": "1.0.0"
+        }
+    ],
+    "resources": [
+        {
+            "dimensions": {
+                "myTextTopPadding": "60dp"
+            }
+        }
+    ],
+    "layouts": {
+        "HomeScreen": {
+            "description": "A basic home screen with a title and a logo",
+            "parameters": [
+                {
+                    "name": "title",
+                    "type": "string"
+                },
+                {
+                    "name": "logo",
+                    "type": "string"
+                }
+            ],
+            "items": [
+                {
+                    "type": "Container",
+                    "width": "100%",
+                    "height": "100%",
+                    "justifyContent": "center",
+                    "alignItems": "center",
+                    "item": [
+                        {
+                            "type": "Image",
+                            "source": "${logo}",
+                            "width": "20vw",
+                            "height": "20vw",
+                            "scale": "best-fill"
+                        },
+                        {
+                            "type": "Text",
+                            "text": "${title}",
+                            "style": "textStyleDisplay4",
+                            "paddingTop": "@myTextTopPadding"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+            {
+                "type": "HomeScreen",
+                "title": "${payload.templateData.text}",
+                "logo": "${payload.templateData.image}"
+            }
+        ]
+    }
+}

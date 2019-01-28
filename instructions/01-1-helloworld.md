@@ -67,3 +67,4 @@ You will create your First Alexa Presentation Language (APL) Document using the 
 
 ## Bravo ! You have just created your first APL Template
 
+#### Next Step : [Add your APL Template to your Skill](./01-2-backend.md)

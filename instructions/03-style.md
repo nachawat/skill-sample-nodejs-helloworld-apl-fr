@@ -37,11 +37,15 @@ Then, you will render your Alexa Presentation Language (APL) Document using the 
 ## Bravo ! You have just created your first APL Template with a style. You will now use it in your Skill.
 
 
-1. Navigate to Folder ```lambda/custom/documents```
+1. Navigate to the `Code` Tab of your Skill
 
-2. Create a new File named [template_withstyle.json](../lambda/custom/documents/template_withstyle.json) in Folder ```documents``` and paste the `document` from the **APL Authoring Tool** into this file
+![backend_hosted_skill](./images/backend_hosted_skill.png)
 
-3. Open your Skill ```index.js``` file
+2. Create a new File named [template_withstyle.json](../lambda/custom/documents/template_withstyle.json) in Folder ```lambda/documents``` and paste the `document` from the **APL Authoring Tool** into this file
+
+> **Important:** Don't forget to save your file!
+
+3. Open file ```index.js```
 
 4. Locate the following Handler : `LaunchRequestHandler`
 
@@ -62,16 +66,24 @@ document: require('./documents/template_withstyle.json'),
 ...
 ```
 
-6. Go back to the root folder of your Skill and Deploy your Skill backend code using ```ASK CLI```
+6. Save your code
 
-```
-ask deploy -t lambda
-```
+![save_backend](./images/save_backend.png)
 
-7. Open the [Developer Portal](https://developer.amazon.com/alexa/console/ask) and Navigate to your Skill Test Simulator page
+>  **Important**: The developer console does not automatically save your work as you make changes. If you close the browser window without clicking Save, your work is lost.
 
-8. Test your Skill
+7. Deploy your code
+
+![deploy_backend](./images/deploy_backend.png)
+
+> **Important**: You must successfully deploy the code before you can test it.
+
+8. Navigate to the `Test` tab of your Skill
+
+9. Test your Skill
 
 ![simulator](./images/simulator-style.png)
 
 ## Bravo ! You have just rendered your first APL Template with a Style.
+
+#### Next Step : [Add a Style from Alexa Package to your APL Template](./04-style-package.md)

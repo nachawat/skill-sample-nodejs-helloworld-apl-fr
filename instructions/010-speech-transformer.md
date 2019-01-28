@@ -37,20 +37,19 @@ Then, you will render your Alexa Presentation Language (APL) Document using the 
 
 ## Bravo ! You have just created your first APL Template using Speech Transformer. You will now use it in your Skill.
 
+1. Navigate to the `Code` Tab of your Skill
 
-1. Navigate to Folder ```lambda/custom/documents```
+![backend_hosted_skill](./images/backend_hosted_skill.png)
 
-2. Create a new File named [template_withspeechtransformer.json](../lambda/custom/documents/template_withspeechtransformer.json) in Folder ```documents``` and paste the `document` from the **APL Authoring Tool** into this file
+2. Create a new File named [template_withspeechtransformer.json](../lambda/custom/documents/template_withspeechtransformer.json) in Folder ```lambda/documents``` and paste the `document` from the **APL Authoring Tool** into this file
 
-3. Navigate to Folder ```lambda/custom/datasources```
+3. Create a new File named [datasource_withspeechtransformer.json](../lambda/custom/datasources/datasource_withspeechtransformer.json) in Folder ```lambda/datasources``` and paste the `Data JSON` from the **APL Authoring Tool** into this file
 
-4. Create a new File named [datasource_withspeechtransformer.json](../lambda/custom/datasources/datasource_withspeechtransformer.json) in Folder ```datasources``` and paste the `Data JSON` from the **APL Authoring Tool** into this file
+4. Open file ```index.js```
 
-5. Open your Skill ```index.js``` file
+5. Locate the following Handler : `LaunchRequestHandler`
 
-6. Locate the following Handler : `LaunchRequestHandler`
-
-7. Update the method ```handle(handlerInput)``` to have both ```Alexa.Presentation.APL.RenderDocument``` and ```Alexa.Presentation.APL.ExecuteCommands``` directives
+6. Update the method ```handle(handlerInput)``` to have both ```Alexa.Presentation.APL.RenderDocument``` and ```Alexa.Presentation.APL.ExecuteCommands``` directives
 
 **Before**
 
@@ -104,13 +103,19 @@ Then, you will render your Alexa Presentation Language (APL) Document using the 
 ...
 ```
 
-8. Go back to the root folder of your Skill and Deploy your Skill backend code using ```ASK CLI```
+7. Save your code
 
-```
-ask deploy -t lambda
-```
+![save_backend](./images/save_backend.png)
 
-9. Open the [Developer Portal](https://developer.amazon.com/alexa/console/ask) and Navigate to your Skill Test Simulator page
+>  **Important**: The developer console does not automatically save your work as you make changes. If you close the browser window without clicking Save, your work is lost.
+
+8. Deploy your code
+
+![deploy_backend](./images/deploy_backend.png)
+
+> **Important**: You must successfully deploy the code before you can test it.
+
+9. Navigate to the `Test` tab of your Skill
 
 10. Test your Skill
 

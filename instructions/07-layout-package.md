@@ -38,19 +38,19 @@ Then, you will render your Alexa Presentation Language (APL) Document using the 
 ## Bravo ! You have just created your first APL Template using Alexa Style Package. You will now use it in your Skill.
 
 
-1. Navigate to Folder ```lambda/custom/documents```
+1. Navigate to the `Code` Tab of your Skill
 
-2. Create a new File named [template_withlayoutpackage.json](../lambda/custom/documents/template_withlayoutpackage.json) in Folder ```documents``` and paste the `document` from the **APL Authoring Tool** into this file
+![backend_hosted_skill](./images/backend_hosted_skill.png)
 
-3. Navigate to Folder ```lambda/custom/datasources```
+2. Create a new File named [template_withlayoutpackage.json](../lambda/custom/documents/template_withlayoutpackage.json) in Folder ```lambda/documents``` and paste the `document` from the **APL Authoring Tool** into this file
 
-4. Create a new File named [datasource.json](../lambda/custom/datasources/datasource.json) in Folder ```datasources``` and paste the `Data JSON` from the **APL Authoring Tool** into this file
+3. Create a new File named [datasource.json](../lambda/custom/datasources/datasource.json) in Folder ```lambda/datasources``` and paste the `Data JSON` from the **APL Authoring Tool** into this file
 
-5. Open your Skill ```index.js``` file
+4. Open file ```index.js```
 
-6. Locate the following Handler : `LaunchRequestHandler`
+5. Locate the following Handler : `LaunchRequestHandler`
 
-7. Update the document and datasource parameters of the APL Directive in ```handle(handlerInput)```  method
+6. Update the document and datasource parameters of the APL Directive in ```handle(handlerInput)```  method
 
 **Before**
 
@@ -69,16 +69,24 @@ datasources: require('./datasources/datasource.json')
 ...
 ```
 
-8. Go back to the root folder of your Skill and Deploy your Skill backend code using ```ASK CLI```
+7. Save your code
 
-```
-ask deploy -t lambda
-```
+![save_backend](./images/save_backend.png)
 
-9. Open the [Developer Portal](https://developer.amazon.com/alexa/console/ask) and Navigate to your Skill Test Simulator page
+>  **Important**: The developer console does not automatically save your work as you make changes. If you close the browser window without clicking Save, your work is lost.
+
+8. Deploy your code
+
+![deploy_backend](./images/deploy_backend.png)
+
+> **Important**: You must successfully deploy the code before you can test it.
+
+9. Navigate to the `Test` tab of your Skill
 
 10. Test your Skill
 
 ![simulator](./images/simulator-layout-package.png)
 
 ## Bravo ! You have just rendered your first APL Template with Alexa Layout Package.
+
+#### Next Step : [Use When Clauses in your APL Template](./08-when-clause.md)

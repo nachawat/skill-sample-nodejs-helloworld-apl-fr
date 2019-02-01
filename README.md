@@ -19,7 +19,7 @@ If you want to directly setup the final Skill, Developers with the ASK Command L
 ### Tutorials & Guides
 * [Voice Design Guide](https://developer.amazon.com/designing-for-voice/) - A great resource for learning conversational and voice user interface design.
 
-* [APL on GithHub](http://github.com/alexa-labs) - Learn how to build an Alexa Skill from within your browser with this beginner friendly tutorial on Codecademy!
+* [APL on GithHub](http://github.com/alexa-labs) - Explore Skill samples with APL!
 
 ### Documentation
 

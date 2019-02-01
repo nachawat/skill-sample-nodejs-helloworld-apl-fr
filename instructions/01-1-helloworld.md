@@ -2,7 +2,7 @@
 
 You will create your First Alexa Presentation Language (APL) Document using the **APL Authoring Tool**.
 
-1. Open [APL Authorhing Tool](https://developer.amazon.com/alexa/console/ask/displays)
+1. Open [APL Authoring Tool](https://developer.amazon.com/alexa/console/ask/displays)
 
 2. Select `Start from Scratch`
 
@@ -49,11 +49,11 @@ You will create your First Alexa Presentation Language (APL) Document using the 
 
 * `Styles` are a collection of state-dependent resources. For example, the flatButton style defines the size, background color, text color, border color, border width, and border radius of one type of button for the “normal”, “pressed”, “focused”, and “disabled” states. All APL components have a clearly documented list of styled properties.
 
-* `Layouts` are composed of visual components. Portions of the layout can be dependent on the screen size/shape or and may include other layouts
+* `Layouts` are composed of visual components. Portions of the layout can be dependent on the screen size/shape and may include other layouts
 
 * The `mainTemplate` property is a pre-defined layout. This is the layout that will be inflated when the APL document is first instantiated on the screen.
 
-4. Copy and Paste the code from this [link](../lambda/custom/documents/template_basic.json) overwriting the empty APL document in the window. You should now see a simulation of the display render in the viewport window!
+4. Copy and Paste the code from this **[link](../lambda/custom/documents/template_basic.json)** overwriting the empty APL document in the window. You should now see a simulation of the display render in the viewport window!
 
 ![medium-hub](./images/hello-world-medium-hub.png)
 

@@ -29,7 +29,7 @@ You will render your First Alexa Presentation Language (APL) Document using the 
 
 ![backend_folder_creation](./images/backend_folder_creation.png)
 
-8. Create a new File named [template_basic.json](../lambda/custom/documents/template_basic.json) in Folder ```lambda/documents``` and paste the document from the **APL Authoring Tool** into this file
+8. Create a new File named **[template_basic.json](../lambda/custom/documents/template_basic.json)** in Folder ```lambda/documents``` and paste the `Start from Scratch` from the **APL Authoring Tool** into this file
 
 ![backend_file_creation](./images/backend_file_creation.png)
 
@@ -39,7 +39,7 @@ You will render your First Alexa Presentation Language (APL) Document using the 
 
 9. Open file ```index.js```
 
-10. Create a new function to detect APL interface
+10. Create a new function to detect APL interface. You can add this function at the end of the file.
 
 ```javascript
 function supportsAPL(handlerInput) {

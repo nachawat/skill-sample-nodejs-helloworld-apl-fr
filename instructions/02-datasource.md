@@ -4,7 +4,7 @@ You will update your First Alexa Presentation Language (APL) Document to use a `
 Then, you will render your Alexa Presentation Language (APL) Document using the [Alexa Node.js SDKv2](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs). The APL Document will be rendered for the following request type : ```LaunchRequest```.
 
 
-1. Go back to the [APL Authorhing Tool](https://developer.amazon.com/alexa/console/ask/displays)
+1. Go back to the [APL Authoring Tool](https://developer.amazon.com/alexa/console/ask/displays)
 
 2. Select `Start from Scratch`
 
@@ -20,13 +20,13 @@ Then, you will render your Alexa Presentation Language (APL) Document using the 
 
 ![toggle-code](./images/toggle-code-view.png)
 
-4. Copy and Paste the code from this [link](../lambda/custom/documents/template_basic_withdatasource.json) overwriting the empty APL document in the window.
+4. Copy and Paste the code from this **[link](../lambda/custom/documents/template_basic_withdatasource.json)** overwriting the empty APL document in the window.
 
 5. Click on `Data JSON`
 
 ![data-json](./images/data-json.png)
 
-6. Copy and Paste the code from this [link](../lambda/custom/datasources/datasource_basic.json) overwriting the empty Data JSON in the window. You should now see a simulation of the display render in the viewport window!
+6. Copy and Paste the code from this **[link](../lambda/custom/datasources/datasource_basic.json)** overwriting the empty Data JSON in the window. You should now see a simulation of the display render in the viewport window!
 
 ![medium-hub](./images/hello-world-medium-hub.png)
 
@@ -45,7 +45,7 @@ Then, you will render your Alexa Presentation Language (APL) Document using the 
 
 ![backend_folder_datasources_creation](./images/backend_folder_datasources_creation.png)
 
-3. Create a new File named [datasource_basic.json](../lambda/custom/datasources/datasource_basic.json) in Folder ```datasource``` and paste the `Data JSON` from the **APL Authoring Tool** into this file
+3. Create a new File named **[datasource_basic.json](../lambda/custom/datasources/datasource_basic.json)** in Folder ```lambda/datasources``` and paste the `Data JSON` from the **APL Authoring Tool** into this file
 
 ![backend_file_data_source_creation](./images/backend_file_data_source_creation.png)
 
@@ -55,7 +55,7 @@ Then, you will render your Alexa Presentation Language (APL) Document using the 
 
 4. Go back to Folder ```lambda/documents```
 
-5. Create a new File named [template_basic_withdatasource.json](../lambda/custom/documents/template_basic_withdatasource.json) in Folder ```lambda/documents``` and paste the `document` from the **APL Authoring Tool** into this file
+5. Create a new File named **[template_basic_withdatasource.json](../lambda/custom/documents/template_basic_withdatasource.json)** in Folder ```lambda/documents``` and paste the `Start from Scratch` from the **APL Authoring Tool** into this file.
 
 > **Important:** Don't forget to save your file!
 
